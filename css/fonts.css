@@ -1,0 +1,154 @@
+/* All fonts go here */
+
+/* Futura PT */
+@font-face {
+    font-family: 'Futura Condensed PT Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura Condensed PT Medium'), url('futura-condensed-pt-medium-589e44ed1e3a5.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura Condensed PT Medium Oblique';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura Condensed PT Medium Oblique'), url('futura-condensed-pt-medium-oblique-589e4507d391c.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Book'), url('futura-pt-book-589a6dec272c3.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Book Oblique';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Book Oblique'), url('futura-pt-book-oblique-589e44623c7b4.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Light'), url('futura-pt-light-589a6e187563a.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Light Oblique';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Light Oblique'), url('futura-pt-light-oblique-589e448ae90e2.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Medium'), url('futura-pt-medium-589e45b956de4.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Medium Oblique';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Medium Oblique'), url('futura-pt-medium-oblique-589e460871ec2.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT DemiBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT DemiBold'), url('futura-pt-demibold-589e43b852117.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT DemiBold Oblique';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT DemiBold Oblique'), url('futura-pt-demibold-oblique-589e43ec3ea82.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Bold'), url('futura-pt-bold-589e44b6aacd3.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Bold Oblique';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Bold Oblique'), url('futura-pt-bold-oblique-589e453384a18.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Heavy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Heavy'), url('futura-pt-heavy-589a6dd12187e.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Futura PT Heavy Oblique';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Heavy Oblique'), url('futura-pt-heavy-oblique-589a6e480ab16.woff') format('woff');
+}
+
+/* Liberation Sans */
+
+@font-face {
+    font-family: 'Liberation Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Liberation Sans'), url('LiberationSans-Regular.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Liberation Sans Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Liberation Sans Italic'), url('LiberationSans-Italic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Liberation Sans Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Liberation Sans Bold'), url('LiberationSans-Bold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Liberation Sans Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Liberation Sans Bold Italic'), url('LiberationSans-BoldItalic.woff') format('woff');
+}
+
+/* Anton */
+@font-face {
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Anton'), url('anton.woff') format('woff');
+}

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 24 24" aria-hidden="true">
+  <!-- outer frame -->
+  <rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1"/>
+
+  <!-- caption area (solid) -->
+  <rect x="2.5" y="2.5" width="19" height="6.5" rx="3" fill="currentColor"/>
+
+  <!-- caption text lines -->
+  <rect x="7" y="4.5" width="10" height="1.5" rx="0.8" fill="black"/>
+  <rect x="7" y="6.8" width="7" height="1.5" rx="0.8" fill="black"/>
+
+  <!-- image circle -->
+  <circle cx="12" cy="15" r="3.5" fill="none" stroke="currentColor" stroke-width="1"/>
+</svg>
