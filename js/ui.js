@@ -17,13 +17,8 @@ canvas.addEventListener('click', () => { // if user clicks the canvas
 const advancedSettingsBtn = document.getElementById('advBtn'); // advanced settings button
 const advancedSettingsHandler = document.getElementById('advancedSettingsHandler'); // advanced settings handler
 advancedSettingsBtn.addEventListener('click', () => {
-    // toggle advanced settings visibility
-    advancedSettingsHandler.classList.toggle('visible');
-    // toggle button text
-    if (advancedSettingsBtn.textContent === 'advanced settings') {
-        advancedSettingsBtn.textContent = 'advanced settings';
-    } else {
-        advancedSettingsBtn.textContent = 'advanced settings';
-    }
+    const isVisible = advancedSettingsHandler.classList.toggle('visible');
+    document.body.classList.toggle('adv-open', isVisible);
+
 });
     
