@@ -4,7 +4,7 @@ document.getElementById('exportBtn').addEventListener('click', () => {
     const createEl = document.createElement('a'); // create a temporary anchor element
     createEl.href = canvasURL;
 
-    createEl.download = 'meme.png'; // set the download filename
+    createEl.download = 'MadeUsingOpenMemer.png'; // set the download filename
 
     createEl.click(); // trigger the download
     createEl.remove(); // clean up the temporary element
