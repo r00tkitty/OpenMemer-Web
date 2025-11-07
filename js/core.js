@@ -63,18 +63,31 @@ function drawBaseImage() {
     // Finally, we draw the image on the canvas
     ctx.drawImage(image, x, y, canvas.width, canvas.height); // redraw the image
 }
+
 function drawTopText(text, fontSize) {
+    const maxWidth = canvas.width * 0.9; // 90% of canvas width
+    const lines = wrapText(ctx, text, maxWidth);
     const x = canvas.width / 2;
-    const y = fontSize + 10;
-    ctx.fillText(text, x, y);
-    ctx.strokeText(text, x, y);
+    let y = fontSize + 10;
+
+    lines.forEach(line => { // draw each line
+        ctx.fillText(line, x, y);
+        ctx.strokeText(line, x, y);
+        y += fontSize * 1.1; // move to next line position
+    });
 }
 // Function to draw meme text on the canvas
 function drawBottomText(text, fontSize) {
+    const maxWidth = canvas.width * 0.9; // 90% of canvas width
+    const lines = wrapText(ctx, text, maxWidth);
     const x = canvas.width / 2;
-    const y = canvas.height - fontSize * 0.3;
-    ctx.fillText(text, x, y);
-    ctx.strokeText(text, x, y);
+    let y = canvas.height - fontSize * 0.3;
+    for (let i = lines.length - 1; i >= 0; i--) { // draw lines from bottom to top
+
+        ctx.fillText(lines[i], x, y);
+        ctx.strokeText(lines[i], x, y);
+        y -= fontSize * 1.1; // move to next line position
+    }
 
 }
 
@@ -83,7 +96,7 @@ function drawMeme() {
     const fontSizeValue = fontSizeInput.value / 100; // convert percentage to fraction
     const strokeWidthValue = outlineWidthInput.value / 100; // convert percentage to fraction
     const fontSize = canvas.width * fontSizeValue;
-    
+
 
     ctx.fillStyle = 'white';
     ctx.strokeStyle = 'black';
@@ -97,4 +110,24 @@ function drawMeme() {
 
     drawTopText(topTextValue, fontSize);
     drawBottomText(bottomTextValue, fontSize);
+}
+
+function wrapText(ctx, text, maxWidth) { // helper function to wrap text
+    const words = text.split(' '); // split text into words into an array
+    let line = ''; // current line
+    const lines = [];  // array to hold lines
+    for (let i = 0; i < words.length; i++) { // iterate over words
+        const testLine = line + words[i] + ' '; // test adding the next word
+        const testWidth = ctx.measureText(testLine).width; // measure the width of the test line
+        if (testWidth > maxWidth && i > 0) { // if it exceeds max width
+            lines.push(line.trim()); // push current line to lines array
+            line = words[i] + ' '; // start new line with current word
+        } else {
+            line = testLine; // otherwise, continue adding to the line
+        }
+    }
+    lines.push(line.trim());
+    console.log("wrapText result:", lines);
+    return lines;
+
 }
