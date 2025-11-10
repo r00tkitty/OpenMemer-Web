@@ -12,7 +12,7 @@ A simple, free, open-source meme generator with no watermarks, no ads, lightweig
 - No accounts, no ads, no bullshit
 
 ## To-Do list
-- [ ] Mobile-friendly layout
+- [X] Mobile-friendly layout
 - [ ] GIF / animated caption support
 - [ ] Demotivational poster mode
 - [ ] Drag-to-position text
