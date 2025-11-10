@@ -117,6 +117,7 @@ body.adv-open {
     font-family: 'Libre Franklin', sans-serif;
     cursor: pointer;
 }
+
 button {
     transition: transform 0.15s ease, background 0.15s ease;
 }
@@ -124,6 +125,7 @@ button {
 button:active {
     transform: scale(0.97);
 }
+
 #advancedSettingsHandler {
     /* hidden state */
     max-height: 0;
@@ -138,11 +140,13 @@ button:active {
 
 #advancedSettingsHandler.visible {
     /* visible state */
-    max-height: 400px; /* large enough to fit contents — adjust if needed */
+    max-height: 400px;
+    /* large enough to fit contents — adjust if needed */
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
 }
+
 .advGroup {
     display: flex;
     flex-direction: column;
@@ -165,6 +169,7 @@ button:active {
     font-family: 'Libre Franklin', sans-serif;
     cursor: pointer;
 }
+
 #mobilePlaceholder {
     color: white;
     text-align: center;
@@ -175,34 +180,37 @@ button:active {
 .hidden {
     display: none;
 }
+
 @media (max-width: 600px) {
+
     /* Center the body content */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 30vh;
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 30vh;
 
-}
+    }
 
-body.adv-open {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 55vh;
-}
+    body.adv-open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 55vh;
+    }
+
     /* Mobile layout: show canvas and controls, hide the placeholder */
-    
+
     #canvasHolder {
         display: block;
         width: 95vw;
         max-width: 1200px;
         margin: 0.5rem auto;
         border-radius: 8px;
-        box-shadow: 0 0 8px rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.12);
+        border: 1px solid white;
+        box-shadow: 0 0 10px white;
         cursor: pointer;
     }
 
@@ -210,7 +218,8 @@ body.adv-open {
     #memeEditor {
         width: 100%;
         height: auto;
-        touch-action: manipulation; /* improve touch responsiveness */
+        touch-action: manipulation;
+        /* improve touch responsiveness */
     }
 
     .controls {
@@ -237,7 +246,8 @@ body.adv-open {
         border-radius: 8px;
     }
 
-    button, .advInput {
+    button,
+    .advInput {
         width: 100%;
         padding: 0.8rem;
         font-size: 1.05rem;
