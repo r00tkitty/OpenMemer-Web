@@ -46,4 +46,17 @@ advancedSettingsBtn.addEventListener('click', () => {
     document.body.classList.toggle('adv-open', isVisible);
 
 });
+
+const inputs = document.querySelectorAll('.textInput');
+
+inputs.forEach(input => {
+    input.addEventListener('focus', () => {
+        input.parentElement.classList.add('active');
+    });
+
+    input.addEventListener('blur', () => {
+        input.parentElement.classList.remove('active');
+    });
+});
+
     
