@@ -99,8 +99,9 @@ function drawBottomText(text, fontSize) {
 function drawMeme() {
     if (hasImageBeenLoaded == true) {
         drawBaseImage();
-        const fontSizeValue = fontSizeInput.value / 100; // convert percentage to fraction
-        const strokeWidthValue = outlineWidthInput.value / 100; // convert percentage to fraction
+        console.log("fontPercent =", fontPercent);
+        const fontSizeValue = fontPercent / 100; // convert percentage to fraction
+        const strokeWidthValue = strokePercent / 100; // convert percentage to fraction
         const fontSize = canvas.width * fontSizeValue;
 
 
