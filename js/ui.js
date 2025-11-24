@@ -69,21 +69,30 @@ document.querySelectorAll('.pill-btn').forEach(btn => {
 // Handle Android "Back" button closing keyboard without blurring
 if (window.visualViewport) {
     let viewportBaseHeight = window.visualViewport.height;
+    let isKeyboardLikelyOpen = false;
     
     window.visualViewport.addEventListener('resize', () => {
+        const currentHeight = window.visualViewport.height;
+
         // Update base height if the new height is larger (e.g. keyboard closed or browser bars hid)
-        if (window.visualViewport.height > viewportBaseHeight) {
-            viewportBaseHeight = window.visualViewport.height;
+        if (currentHeight > viewportBaseHeight) {
+            viewportBaseHeight = currentHeight;
+        }
+
+        // If height is significantly smaller than base, keyboard is open
+        if (viewportBaseHeight - currentHeight > 150) {
+            isKeyboardLikelyOpen = true;
         }
 
         // If the viewport height is close to the base height, the keyboard is likely closed
-        if (Math.abs(window.visualViewport.height - viewportBaseHeight) < 50) {
-            // If we are in keyboard-open mode, force a blur to reset the UI
-            if (document.body.classList.contains('keyboard-open')) {
+        if (Math.abs(viewportBaseHeight - currentHeight) < 50) {
+            // Only blur if we knew the keyboard was open previously
+            if (isKeyboardLikelyOpen && document.body.classList.contains('keyboard-open')) {
                 if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) {
                     document.activeElement.blur();
                 }
             }
+            isKeyboardLikelyOpen = false;
         }
     });
 }
