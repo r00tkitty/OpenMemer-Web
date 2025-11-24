@@ -21,4 +21,35 @@ advancedSettingsBtn.addEventListener('click', () => {
     document.body.classList.toggle('adv-open', isVisible);
 
 });
-    
+
+// Handle pill controls
+document.querySelectorAll('.pill-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const targetId = btn.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        if (!input) return;
+        
+        const step = parseFloat(input.step) || 1;
+        const min = parseFloat(input.min);
+        const max = parseFloat(input.max);
+        let val = parseFloat(input.value);
+
+        if (btn.classList.contains('decrement')) {
+            val -= step;
+        } else {
+            val += step;
+        }
+
+        // Clamp value
+        if (!isNaN(min) && val < min) val = min;
+        if (!isNaN(max) && val > max) val = max;
+
+        // Round to avoid floating point errors
+        val = Math.round(val * 100) / 100;
+
+        input.value = val;
+        
+        // Trigger change event manually so drawMeme picks it up
+        input.dispatchEvent(new Event('change'));
+    });
+});

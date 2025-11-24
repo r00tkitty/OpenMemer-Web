@@ -170,6 +170,56 @@ button:active {
     cursor: pointer;
 }
 
+/* Pill control styles */
+.pill-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid white;
+    border-radius: 25px;
+    background-color: black;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pill-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: auto;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pill-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.pill-input {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.pill-input::-webkit-outer-spin-button,
+.pill-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 #mobilePlaceholder {
     color: white;
     text-align: center;
@@ -252,6 +302,12 @@ button:active {
         padding: 0.8rem;
         font-size: 1.05rem;
         border-radius: 8px;
+    }
+
+    .pill-btn {
+        width: auto;
+        border-radius: 0;
+        padding: 5px 20px;
     }
 
     #mobilePlaceholder {
