@@ -111,6 +111,35 @@ const olderLabel = document.getElementById('olderVersionLabel');
 const changelogTitle = document.getElementById('changelogTitle');
 const changelogList = document.getElementById('changelogList');
 
+// Mode Toggling
+const modeBtns = document.querySelectorAll('.mode-btn');
+let currentMode = 'standard';
+
+modeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Update UI
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Update State
+        currentMode = btn.getAttribute('data-mode');
+
+        // Update Placeholders
+        if (currentMode === 'demotivational') {
+            topText.placeholder = "title";
+            bottomText.placeholder = "subtitle";
+        } else {
+            topText.placeholder = "top text";
+            bottomText.placeholder = "bottom text";
+        }
+        
+        // TODO: Trigger redraw with new mode
+        if (typeof drawMeme === 'function') {
+            drawMeme();
+        }
+    });
+});
+
 async function loadChangelogs() {
     try {
         const response = await fetch('changelog.json');

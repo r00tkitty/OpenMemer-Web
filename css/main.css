@@ -30,6 +30,45 @@ body.adv-open {
     font-family: 'Libre Franklin', sans-serif;
 }
 
+/* Mode Selector */
+.mode-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    width: 45vw; /* Match canvas width */
+    max-width: 1200px;
+}
+
+.mode-btn {
+    background: black;
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1; /* Equal width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    height: 50px; /* Fixed height for consistency */
+}
+
+.mode-btn svg {
+    height: 2rem;
+    width: 2rem;
+}
+
+.mode-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mode-btn.active {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
 /* container for the canvas */
 #canvasHolder {
     display: block;
@@ -426,6 +465,11 @@ button:active {
         border: 1px solid white;
         box-shadow: 0 0 10px white;
         cursor: pointer;
+    }
+
+    .mode-selector {
+        width: 95vw;
+        max-width: 1200px;
     }
 
     /* Make canvas scale to container width while keeping aspect ratio */
