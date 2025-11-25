@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d'); // get 2D context for drawing
 let image = new Image(); // create a new image object
 let currentMemeMode = 'impact'; // default meme mode
 const fileInput = document.getElementById('imageLoader'); // input element
+const uploadHint = document.getElementById('uploadHint'); // upload hint element
 let hasImageBeenLoaded = false; // flag to track if an image has been loaded
 fileInput.addEventListener('change', handleImage) // listen for file input changes
 function handleImage() {
@@ -41,7 +42,10 @@ function handleImage() {
         // draw the image on the canvas when it loads
         console.log("Image loaded!");
         hasImageBeenLoaded = true; // set flag to true
-
+        
+        if (uploadHint) {
+            uploadHint.classList.add('hidden');
+        }
 
         drawMeme(); // initial draw call
     };

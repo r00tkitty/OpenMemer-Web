@@ -71,6 +71,7 @@ body.adv-open {
 
 /* container for the canvas */
 #canvasHolder {
+    position: relative; /* Needed for absolute positioning of hint */
     display: block;
     justify-content: center;
     align-items: center;
@@ -405,6 +406,34 @@ button:active {
     color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+/* Upload Hint Overlay */
+.upload-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    pointer-events: none; /* Let clicks pass through to canvas/container */
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.upload-hint span {
+    color: white;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.upload-hint.hidden {
+    display: none;
 }
 
 /* Mobile adjustments */
