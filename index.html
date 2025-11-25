@@ -11,12 +11,12 @@
     <script src="js/ui.js" defer></script>
     <script src="js/export.js" defer></script>
 
-    <link rel="icon" type="image/png" href="./media/icons/favicon/favicon-96x96.png" sizes="96x96"/>
-    <link rel="icon" type="image/svg+xml" href="./media/icons/favicon/favicon.svg"/>
-    <link rel="shortcut icon" href="./media/icons/favicon/favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="./media/icons/favicon/apple-touch-icon.png"/>
-    <meta name="apple-mobile-web-app-title" content="OpenMemer"/>
-    <link rel="manifest" href="./media/icons/favicon/site.webmanifest"/>
+    <link rel="icon" type="image/png" href="./media/icons/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./media/icons/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./media/icons/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./media/icons/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="OpenMemer" />
+    <link rel="manifest" href="./media/icons/favicon/site.webmanifest" />
 
 
     <!-- Primary SEO -->
@@ -42,6 +42,43 @@
 
 <body>
     <h1 class="logo">OpenMemer</h1>
+
+    <div class="mode-selector">
+        <button class="mode-btn active" data-mode="standard" aria-label="Standard Mode">
+            <!-- Standard Icon (Inline SVG) -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <!-- outer frame -->
+                <rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="none" stroke="currentColor"
+                    stroke-width="1" />
+
+                <!-- top text bar -->
+                <rect x="6" y="5" width="12" height="2.2" rx="1.1" fill="currentColor" />
+
+                <!-- image circle -->
+                <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1" />
+
+                <!-- bottom text bar -->
+                <rect x="6" y="16.8" width="12" height="2.2" rx="1.1" fill="currentColor" />
+            </svg>
+
+        </button>
+        <button class="mode-btn" data-mode="demotivational" aria-label="Demotivational Mode">
+            <!-- Demotivational Icon (Inline SVG) -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <!-- outer frame -->
+                <rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="none" stroke="currentColor"
+                    stroke-width="1" />
+
+                <!-- inner image -->
+                <rect x="6" y="5" width="12" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1" />
+
+                <!-- subtitle lines -->
+                <rect x="8" y="15.5" width="8" height="1.8" rx="0.9" fill="currentColor" />
+                <rect x="9" y="18" width="6" height="1" rx="0.9" fill="currentColor" />
+            </svg>
+        </button>
+    </div>
+
     <div id="canvasHolder">
         <canvas id="memeEditor" width="800" height="600"></canvas>
         <input type="file" id="imageLoader" name="imageLoader" accept="image/*" hidden />
@@ -50,18 +87,18 @@
         <div class="horizGroupImpact">
             <input type="text" class="textInput" id="topText" placeholder="top text">
             <input type="text" class="textInput" id="bottomText" placeholder="bottom text">
-                <button id="advBtn">advanced settings</button>
+            <button id="advBtn">advanced settings</button>
         </div>
         <div id="advancedSettingsHandler" class="hidden">
             <div class="advGroup">
-                <label class="advLabel" for="fontSize">Font Size:</label>
+                <label class="advLabel" id="fontSizeLabel" for="fontSize">Font Size:</label>
                 <div class="pill-control">
                     <button class="pill-btn decrement" data-target="fontSize">-</button>
                     <input class="pill-input" type="number" id="fontSize" value="8" min="0" max="100" step="0.5">
                     <button class="pill-btn increment" data-target="fontSize">+</button>
                 </div>
             </div>
-            <div class="advGroup">
+            <div class="advGroup" id="outlineGroup">
                 <label class="advLabel" for="outlineWidth">Outline Width:</label>
                 <div class="pill-control">
                     <button class="pill-btn decrement" data-target="outlineWidth">-</button>
@@ -69,10 +106,18 @@
                     <button class="pill-btn increment" data-target="outlineWidth">+</button>
                 </div>
             </div>
+            <div class="advGroup hidden" id="subtitleGroup">
+                <label class="advLabel" for="subtitleSize">Subtitle Size:</label>
+                <div class="pill-control">
+                    <button class="pill-btn decrement" data-target="subtitleSize">-</button>
+                    <input class="pill-input" type="number" id="subtitleSize" value="5" min="0" max="20" step="0.5">
+                    <button class="pill-btn increment" data-target="subtitleSize">+</button>
+                </div>
+            </div>
         </div>
         <button id="exportBtn">export</button>
     </div>
-        <div class="version-indicator" id="versionBtn">v1.1.0</div>
+    <div class="version-indicator" id="versionBtn">v1.2.0</div>
 
     <!-- Changelog Modal -->
     <div id="changelogModal" class="modal">
@@ -99,7 +144,7 @@
         </div>
     </div>
 </body>
-    </div>
+</div>
 </body>
 
 </html>

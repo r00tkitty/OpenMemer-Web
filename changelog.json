@@ -1,5 +1,16 @@
 [
     {
+        "version": "v1.2.0",
+        "changes": [
+            "Added Demotivational mode: create classic poster memes with black borders, white frame, and customizable title/subtitle.",
+            "Advanced settings now allow you to adjust title and subtitle size for Demotivational memes.",
+            "Word wrapping for long titles and subtitles in Demotivational mode.",
+            "Seamless mode switching between Standard and Demotivational formats.",
+            "UI automatically adapts advanced controls for each meme type.",
+            "All features work on mobile and desktop, with high-DPI support."
+        ]
+    },
+    {
         "version": "v1.1.0",
         "changes": [
             "Mobile UI has been improved.",
