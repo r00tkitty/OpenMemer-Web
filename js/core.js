@@ -14,22 +14,6 @@ function handleImage() {
     image.src = url; // set the image source to the file URL
 
     image.onload = function () {
-        /* 
-        IMAGE SIZE LIMITS
-        Minimum: 128x128
-        Maximum: 4000x4000
-        I'll think of better numbers for these later.
-        Can't be assed right now.
-         */
-
-        if (image.width < 128 || image.height < 128) { // minimum size check
-            alert("Image too small. Try something bigger. (Min 128x128)");
-            return;
-        }
-        if (image.width > 4000 || image.height > 4000) { // maximum size check
-            alert("Image too large. Try something smaller. (Max 4000x4000)");
-            return;
-        }
         /*
         Handling image loading and drawing to canvas
         0. Log image loaded
