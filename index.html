@@ -81,6 +81,14 @@
 
     <div id="canvasHolder">
         <canvas id="memeEditor" width="800" height="600"></canvas>
+        <div id="uploadHint" class="upload-hint">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <span>click to upload image</span>
+        </div>
         <input type="file" id="imageLoader" name="imageLoader" accept="image/*" hidden />
     </div>
     <div class="controls">
@@ -117,7 +125,7 @@
         </div>
         <button id="exportBtn">export</button>
     </div>
-    <div class="version-indicator" id="versionBtn">v1.2.0</div>
+    <div class="version-indicator" id="versionBtn">v1.2.1</div>
 
     <!-- Changelog Modal -->
     <div id="changelogModal" class="modal">
