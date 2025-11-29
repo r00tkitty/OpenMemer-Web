@@ -40,15 +40,17 @@ function handleGif(file) {
         const buffer = event.target.result; // get the file data
         // Use gifuct-js to parse the GIF
         const gif = parseGIF(buffer);
-        gifFrames = decompressFrames(gif, true);
+        const frames = decompressFrames(gif, true);
 
-        if (gifFrames.length > 0) {
+        if (frames.length > 0) {
             isGIF = true; // set GIF flag
             hasImageBeenLoaded = true; // set image loaded flag
             
             // Update Export Button Text
             const exportBtn = document.getElementById('exportBtn');
-            if (exportBtn) exportBtn.textContent = "export GIF";
+            if (exportBtn) exportBtn.textContent = "Export GIF";
+
+            gifFrames = frames; // store frames globally
 
             // Set up GIF canvas size
             gifCanvas.width = gifFrames[0].dims.width;
@@ -64,7 +66,7 @@ function handleGif(file) {
 }
 
 function handleStaticImage(file) {
-        const url = URL.createObjectURL(file); // create a URL for the file
+    const url = URL.createObjectURL(file); // create a URL for the file
     image.src = url; // set the image source to the file URL
 
     image.onload = function () {
@@ -313,7 +315,7 @@ function drawGifCaptionMeme() {
     const padding = fontSize * 0.5;
 
     // configure font context to measure text
-    ctx.font = `${fontSize}px "Futura Condensed PT Medium", "Futura PT Bold", Arial, sans-serif`;
+    ctx.font = `${fontSize}px "Futura PT Condensed Bold", "Futura Condensed PT Medium", "Futura PT Bold", Arial, sans-serif`;
 
     const captionText = topText.value;
     const maxTextWidth = scaledImageWidth - (padding * 2);
@@ -339,7 +341,7 @@ function drawGifCaptionMeme() {
         ctx.fillStyle = 'black';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
-        ctx.font = `${fontSize}px "Futura Condensed PT Medium", "Futura PT Bold", Arial, sans-serif`;
+        ctx.font = `${fontSize}px "Futura PT Condensed Bold", "Futura Condensed PT Medium", "Futura PT Bold", Arial, sans-serif`;
 
         let y = padding;
         const x = canvas.width / 2;
