@@ -10,6 +10,11 @@ document.getElementById('exportBtn').addEventListener('click', () => {
 });
 
 function exportImage() {
+    // Re-draw at native resolution
+    if (typeof drawMeme === 'function') {
+        drawMeme(true);
+    }
+
     let canvasURL = canvas.toDataURL('image/png');  // get the data URL of the canvas content
     const createEl = document.createElement('a'); // create a temporary anchor element
     createEl.href = canvasURL;
@@ -18,6 +23,11 @@ function exportImage() {
 
     createEl.click(); // trigger the download
     createEl.remove(); // clean up the temporary element
+
+    // Restore display resolution
+    if (typeof drawMeme === 'function') {
+        drawMeme(false);
+    }
 }
 
 async function exportGIF(btn) {
@@ -60,7 +70,7 @@ async function exportGIF(btn) {
         renderGifFrameToBuffer(frame, i);
 
         // draw meme elements on top
-        drawMeme();
+        drawMeme(true);
 
         // calculate delay with speed multiplier
         let delay = frame.delay || 100;
@@ -72,6 +82,12 @@ async function exportGIF(btn) {
             delay: delay
         });
     }
+
+    // Restore display resolution
+    if (typeof drawMeme === 'function') {
+        drawMeme(false);
+    }
+
     // handle finish gif export
     gif.on('finished', function(blob) {
         const url = URL.createObjectURL(blob);
